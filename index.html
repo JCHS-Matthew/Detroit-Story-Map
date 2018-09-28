@@ -1,203 +1,65 @@
-<!DOCTYPE html>
-<html lang="en" >
 
-<head>
-  <meta charset="UTF-8">
-  <title>Mapbox GL, fly-to test</title>
-  
-  
-  
-      <link rel="stylesheet" href="css/style.css">
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.css' rel='stylesheet' />
 
-  
-</head>
-
-<body>
-
-  <head>
-  <meta charset='utf-8' />
-  <title>Detroit's Live6</title>
-    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.css' rel='stylesheet' />
-
-</head>
-
-<body>
-  <div id="wrapper">
-    <a href="http://business.financialpost.com/features/battle-for-the-boreal-forest-2#map" target="_blank">
-
-      <div id="share">Read the full story
-      </div>
-    </a>
-    <div id='map'></div>
-
-<!-- Replace the value of the key parameter with your own API key. -->
-
-    <div id='features'>
-      <a name="1"></a>
-
-      <section id='cover' class='active'>
-        <h1>Equitable Development in Detroit
-        </h1>
-        <p>
-        <!--<div id="street-view"></div>-->
-        </p>
-      
-        <small class="scroll"><div id="first-button"><a href="#2">Next &darr;</a> </div>   </small>
-      </section>
-      <a name="2"></a>
-
-      <section id='one'>
-        <br><br><br>
-        <h3>Detroit's Live6</h3>
-
-
-        <p>The site of a new park, funded by Invest Detroit in collaboration with the City of Detroit. 
-        </p>
-        <p>Lorem ipsum dolor sit amet, ea impetus fuisset liberavisse est, vel detraxit aliquando et.
-        </p>
-        <br><br><br>
-        <small class="scroll"><div class="next"><a href="#3">Next &darr;</a>  </div> </small>
-        <a name="3"></a>
-      </section>
-      <section id='two'>
-        <br><br><br>
-        <h3>Livernois-McNichols</h3>
-
-
-        <p>Lorem ipsum dolor sit amet, ea impetus fuisset liberavisse est, vel detraxit aliquando et. Porro efficiendi mei at, ex verterem corrumpit molestiae mea. 
-          </p>
-        <p>Assum perpetua salutatus te ius, quo reprimique ullamcorper ut, mei ex doming dolorem gubergren. Tota regione reprehendunt te ius, mei ne volumus percipitur, nam ex odio mollis.
-        </p>
-        <br><br><br>
-        <small class="scroll"><div class="next"><a href="#4">Next &darr;</a>  </div> </small>
-      </section>
-      <a name="4"></a>
-      <section id='three'>
-        <br><br><br>
-        <h3>Clark Park</h3>
-
-
-        <p>Lorem ipsum dolor sit amet, ea impetus fuisset liberavisse est, vel detraxit aliquando et. Porro efficiendi mei at, ex verterem corrumpit molestiae mea. 
-          </p>
-        <p>Assum perpetua salutatus te ius, quo reprimique ullamcorper ut, mei ex doming dolorem gubergren. Tota regione reprehendunt te ius, mei ne volumus percipitur, nam ex odio mollis.
-        </p>
-        <br><br><br>
-        <small class="scroll"><div class="next"><a href="#5">Next &darr;</a>  </div> </small>
-      </section>
-      <a name="5"></a>
-
-
-      <section id='four'>
-        <h3>The Broadback River</h3>
-
-
-        <p>By motorboat we visited this mighty river that flows into James Bay. We saw ducks and a bald eagle. Cree seek to protect this river valley from loggers, and blocked a bridge across the Broadback.</p>
-        <a name="5"></a>
-        <small class="scroll"><div class="next"><a href="#6">Next &darr;</a>  </div> </small>
-      </section>
-      <a name="6"></a>
-      <section id='five'>
-        <h3>Lake Quenonisca</h3>
-
-
-        <p>On our way back, Cree hunters shot a 300-kilogram moose in the lake.
-        </p>
-        <small class="scroll"><div class="next"><a href="#7">Next &darr;</a>  </div> </small>
-      </section>
-      <a name="7"></a>
-      <section id='six'>
-        <h3>Waswanipi</h3>
-
-
-        <p>This First Nations community's Cree name means light in the water. "In the olden days guys used to light a fire by the shore and the fish would come to the shallow part of the water," says Don Saganash, a Cree tallyman.</p>
-        <small class="scroll"><div class="next"><a href="#8">Next &darr;</a>  </div> </small>
-
-      </section>
-      <a name="8"></a>
-
-
-      <section id='seven'>
-        <h3>Roberval</h3>
-
-
-        <p>This town is a hub known for its hospital in Quebec's thriving Lac Saint-Jean region, which is home to 300,000 people. We lunched with our guides from Resolute Forest Products at Le Coq Roti (The Roasted Rooster).
-        </p>
-        <small class="scroll"><div class="next"><a href="#9">Next &darr;</a>  </div> </small>
-      </section>
-      <a name="9"></a>
-      <section id='eight'>
-        <h3>Mistasibi forestry camp</h3>
-
-
-        <p>Resolute in a company truck drove us 125 kilometres north to its Mistasibi Camp, currently home to about 50 loggers cutting down the black spruce and jack pine trees of the boreal forest to supply Resolute's mills. The cafeteria serves crêpes
-          with maple syrup.
-        </p>
-        <small class="scroll"><div class="next"><a href="#10">Next &darr;</a>  </div> </small>
-
-      </section>
-      <a name="10"></a>
-      <section id='nine'>
-        <h3>Logging operations in Mistasibi</h3>
-
-
-        <p>About 100 kilometres north of the logging camp we visited a spot where the Fillion family operated two harvesters and a forwarder, big machines which cut the forest 24 hours a day.
-
-        </p>
-        <small class="scroll"><div class="next"><a href="#11">Next &darr;</a>  </div> </small>
-      </section>
-      <a name="11"></a>
-      <section id='ten'>
-        <h3>Dolbeau-Mistassini</h3>
-
-
-        <p>In this sawmill and paper mill town on Lac Saint-Jean we met Jean-Pierre Boivin, mayor of the Maria-Chapdelaine county. The size of Sweden, Maria-Chapelaine is home to 8,000 lakes and depends on logging for its livelyhood.
-        </p>
-        <small class="scroll"><div class="next"><a href="#12">Next &darr;</a>  </div> </small>
-
-
-      </section>
-      <a name="12"></a>
-      <section id='eleven'>
-        <h3>Mashteuiatsh</h3>
-
-
-        <p>The Pekuakamiulnuatsh, an Innu tribe who were nomadic for many years, live in this community on the shore of Lac Saint-Jean, formerly known as Pointe-Bleue. They supply logs to Resolute's mills.
-        </p>
-        <small class="scroll"><div class="next"><a href="#13">Next &darr;</a>  </div> </small>
-      </section>
-      <a name="13"></a>
-      <section id='twelve'>
-        <h3>Montreal</h3>
-
-
-        <p>In Montreal we visited the head office of Resolute Forest Products to interview Richard Garneau, the chief executive. Garneau, somewhat hopefully perhaps, has on his wall a peace pipe he bought in Mashteuiatsh.
-        </p>
-
-        <small class="scroll"><div class="next"><a href="http://business.financialpost.com/features/battle-for-the-boreal-forest-2#map" target="_blank">Read the full story</a> | <a href="#1">Back to top &uarr;</a>  </div> </small>
-
-      </section>
-
-
+<div id="wrapper">
+  <a href="http://business.financialpost.com/features/battle-for-the-boreal-forest-2#map" target="_blank">
+    <div id="share">Read the full story
     </div>
+  </a>
+  <div id='map'></div>
+
+  <div id='features'>
+    <a name="1"></a>
+    <section id='cover' class='active'>
+      <h1>Equitable Development in Detroit
+      </h1>
+      <p>
+        <!--<div id="street-view"></div>-->
+      </p>
+      <small class="scroll"><div id="first-button"><a href="#2">Next &darr;</a> </div>   </small>
+    </section>
+
+    <a name="2"></a>
+    <section id='one'>
+      <br><br><br>
+      <h3>Livernois-McNichols</h3>
+      <p>The intersection of Livernois and McNichols marks stark socioeconomic boundaries.
+      </p>
+      <p>In the upper right, one of Detroit's highest income neighborhoods; in the lower left, a disinvested area marked by empty lots and abandoned homes.
+      </p>
+      <br><br><br>
+      <small class="scroll"><div class="next"><a href="#3">Next &darr;</a>  </div> </small>
+    </section>
+
+    <a name="3"></a>
+    <section id='two'>
+      <br><br><br>
+      <h3>From Abandonded to Amenity</h3>
+      <p>In the middle of this disinvested area, the site of a new park funded by Invest Detroit in collaboration with the City of Detroit. 
+      </p>
+      <p>Lorem ipsum dolor sit amet, ea impetus fuisset liberavisse est, vel detraxit aliquando et.
+      </p>
+      <br><br><br>
+      <small class="scroll"><div class="next"><a href="#4">Next &darr;</a>  </div> </small>
+    </section>
+
+    <a name="4"></a>
+    <section id='three'>
+      <br><br><br>
+      <h3>Clark Park</h3>
+      <p>In Southwest Detroit, a participatory budgeting process is breathing new life into an existing park. 
+      </p>
+      <p>Assum perpetua salutatus te ius, quo reprimique ullamcorper ut, mei ex doming dolorem gubergren. Tota regione reprehendunt te ius, mei ne volumus percipitur, nam ex odio mollis.
+      </p>
+      <br><br><br>
+      <small class="scroll"><div class="next"><a href="http://business.financialpost.com/features/battle-for-the-boreal-forest-2#map" target="_blank">Read the full story</a> | <a href="#1">Back to top&nbsp;&uarr;</a>  </div> </small>
+    </section>
 
   </div>
 
+</div>
 
-  </div>
-<script async defer
-         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkUOdZ5y7hMm0yrcCQoCvLwzdM6M8s5qk&callback=initialize">
-    </script>
-</body>
-  
-  
-
-    <script  src="js/index.js"></script>
-
-
-
-
-</body>
-
-</html>
+<!--<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkUOdZ5y7hMm0yrcCQoCvLwzdM6M8s5qk&callback=initialize">
+</script>-->
