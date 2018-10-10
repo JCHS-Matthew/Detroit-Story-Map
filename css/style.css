@@ -1,3 +1,111 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+.mapboxgl-popup {
+  max-width: 260px;
+  font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+.map-card {
+  position: absolute;
+  left: 2vw;
+  top: 7.5vh;
+  padding-top: 20px;
+  width: 35vw;
+  min-width: 135px;
+  min-height: 15vh;
+  max-height: 70vh;
+  /*height: 30vh;*/
+  /*margin-top: 7.5vh;
+  margin-left: 2vw;*/
+  float: left;
+  clear: left;
+  background-color: #222;
+  color: #eee;
+  overflow-y: auto;
+      -webkit-transition: width 1s, height 1s, top 1s, left 1s; /* For Safari 3.1 to 6.0 */
+    transition: width 1s, height 1s, top 1s, left 1s;
+}
+
+.map-card__title {
+  padding: 0 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.map-card__body {
+  padding: 10px 20px 0 20px;   
+  /*max-height: inherit;*/
+}
+.map-card__body p {
+  padding: 1em 0 0 0; 
+  margin: 0;
+}
+
+.map-card__nav {
+  text-align: right;
+  color: #aaa;
+  font-size: .8em;
+  font-weight: 900;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+/*
+.map-card__nav_cover {
+  animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  color: #ececec;
+}
+*/
+  
+.map-card a {
+  color: #ddd;
+}
+ 
+ @keyframes glow {
+   from { font-size: .9rem; }
+   to { font-size: .95rem; }
+ }
+
+ @-moz-keyframes glow {
+   from { font-size: .9rem; }
+   to { font-size: .95rem; }
+ }
+
+ @-webkit-keyframes glow {
+   from { font-size: .9rem; }
+   to { font-size: .95rem; }
+ }
+ 
+
+.JCHS-map-marker {
+  font-size: 48px;
+  color: #eee;
+  stroke: black;
+  background-color: black;
+  cursor: pointer;
+}
+
+.marker__bg_circle i { border-radius: 50%; }
+.marker__bg_square i { border-radius: 10%; }
+
+.marker__info {
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="snow" d="M12 4c-4.41 0-8 3.59-8 8s3.59 8 8 8 8-3.59 8-8-3.59-8-8-8zm1 13h-2v-6h2v6zm0-8h-2V7h2v2z"/><path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>')  no-repeat;
+  background-size: cover;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.marker__coffee {
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path stroke="black" stroke-width="1" fill="snow" d="M20 3H4v10c0 2.21 1.79 4 4 4h6c2.21 0 4-1.79 4-4v-3h2c1.11 0 2-.9 2-2V5c0-1.11-.89-2-2-2zm0 5h-2V5h2v3zM4 19h16v2H4z"/></svg>')  no-repeat;
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
 #street-view {
   height: 300px;
   width: 300px;
@@ -22,94 +130,11 @@ body {
  h1 {
    font-size: 4em;
    line-height: 1.2em;
-   /*font-family: Georgia, Times, 'Times New Roman', serif;*/
-   
-   margin-top: 2rem;
-   margin-bottom: 2rem;
  }
  
- h2 {
-   font-size: 1.3333em;
- }
- 
- h1,
- h2 {
-   margin: 0px 0px 10px;
- }
- 
- h3 {
-   margin-top: 5px;
-   margin-bottom: 2rem;
-   font-size: 2.5rem
- }
  
  p {
    margin-bottom: .5rem;
- }
- 
- .scroll {
-   position: absolute;
-   right: 0px;
-   bottom: 0px;
-   font-size: .8rem;
-   font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-   font-weight: 900;
-   text-transform: uppercase;
-   padding: 5px 10px;
- }
- 
- .scroll a {
-   text-decoration: none;
-   text-shadow: rgba(102, 102, 102, .9) 0px 0px 4px;
- }
- 
- .next a {
-   color: #999;
- }
- 
- @media screen and (max-width: 750px) {
-   .scroll {
-     left: 0;
-   }
- }
- 
- #first-button a {
-   float: right;
-   -webkit-animation: glow 1s ease-in-out infinite alternate;
-   -moz-animation: glow 1s ease-in-out infinite alternate;
-   animation: glow 1s ease-in-out infinite alternate;
-   color: #ececec;
- }
- 
- #first-button a:hover {
-   animation: none;
- }
- 
- @-webkit-keyframes glow {
-   from {
-     font-size: .9rem;
-   }
-   to {
-     font-size: .95rem;
-   }
- }
- 
- @-moz-keyframes glow {
-   from {
-     font-size: .9rem;
-   }
-   to {
-     font-size: .95rem;
-   }
- }
- 
- @keyframes glow {
-   from {
-     font-size: .9rem;
-   }
-   to {
-     font-size: .95rem;
-   }
  }
  
  #map {
@@ -125,48 +150,7 @@ body {
    overflow: hidden;
    padding-right: 20px;
  }
- 
- #features {
-   width: 29%;
-   margin-left: 2rem;
-   float: left;
-   overflow-y: scroll;
-   padding-top: 70px;
- }
- 
- section {
-   padding: 40px;
-   position: relative;
-   transition: background 500ms, color 500ms;
-   -moz-transition: background 500ms, color 500ms;
-   -webkit-transition: background 500ms, color 500ms;
-   padding: 20px;
-   color: rgba(0, 0, 0, 0);
-   -webkit-transition: background 500ms, color 500ms;
-   transition: background 500ms, color 500ms;
-   color: #333;
-   color: rgba(192, 192, 192, 0);
-   text-decoration: none;
-   text-shadow: rgba(102, 102, 102, .9) 0px 0px 4px;
-   margin-bottom: 2rem;
- }
- 
- section.active {
-   opacity: 1;
-   background-color: #222;
-   color: #eee;
- }
- 
- section:last-child {
-   border-bottom: none;
-   margin-bottom: 800px;
- }
- /*  #mobile-fix, mobile-fix a{
-     height:0;
-     width:0;
-     color:#fff;
-}*/
- 
+
  @media screen and (max-width: 1080px) {
    #features {
      width: 40%;
@@ -175,12 +159,22 @@ body {
  }
  
  @media screen and (max-width: 620px) {
-   #features {
+   .map-card {
      width: 50%;
      margin-left: 0;
+     background-color:rgba(0, 0, 0, 0.6);
+   }
+   .map-card__body, .map-card__title {
+          padding: 5px;
    }
  }
  
+ @media screen and (max-height: 350px) {
+   .map-card {
+     margin-top: 0;
+   }
+ }
+
  @media screen and (max-width: 1500px) {
    h1 {
      font-size: 3.5rem;
@@ -237,63 +231,4 @@ body {
      font-size: 1.5rem;
    }
  }
- /* @media screen and (max-width: 767px) {
-   #wrapper {
-     background-image:url("https://nationalpostcom.files.wordpress.com/2015/12/screen-shot-2015-12-02-at-10-26-54-pm-2-copy.jpg");
-     background-repeat: no-repeat;
-     background-position: left; 
-     position:absolute;
-     z-index:999;
-     width:100%;
-     height:700px;
-     overflow:hidden;     
-   }
-   #map{
-     height:0;
-     position:absolute;
-   }
-   #features{
-     height:0;
-     width:0;     
-   }
-   #mobile-fix, mobile-fix a{
-     height:100%;
-     width:100%;
-     z-index:1000;
-     top:0;
-    left:0;
-     color:#999;
-     font-size:1.2rem;
-     text-transform:uppercase; 
-     font-weight:800;
-     padding-left:.5rem;
-   }
-}
-    */
  
- #share {
-   position: absolute;
-   z-index: 999;
-   right: 0;
-   top: 0;
-   background-color: #fff;
-   padding-top: .2rem;
-   padding-right: .2rem;
-   padding-left: .3rem;
-   padding-bottom: .1rem;
-   font-weight: 600;
-   color: #333;
-   opacity: .8;
-   font-family: font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-   font-size: .7rem;
-   text-transform: uppercase;
- }
- 
- #share a {
-   text-decoration: none;
-   color: #333;
- }
- 
- #share a:hover {
-   text-decoration: underline;
- }
