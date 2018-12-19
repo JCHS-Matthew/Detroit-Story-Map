@@ -1,19 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Open Sans", "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
+  background: #fff;
+  font-size: 1rem;
+}
+
+a {
+  text-decoration: none;
+}
+
 .mapboxgl-popup {
-  max-width: 260px;
+  max-width: 80vw;
+  max-height: 80vh;
   font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+
+.mapboxgl-popup__street-view {
+  margin-top: 5px;
+  height: 400px;
+  width: 480px;
+  max-width: 100%;
+}
+
+.mapboxgl-popup__text {
+  max-height: 300px;
+  width: 240px;
 }
 
 .map-card {
   position: absolute;
   left: 2vw;
   top: 7.5vh;
+  /*bottom: 50vh;*/
   padding-top: 20px;
   width: 35vw;
   min-width: 135px;
+  max-width: 450px;
   min-height: 15vh;
-  max-height: 70vh;
+  max-height: 80vh;
+  /*max-height: 400px;*/
   /*height: 30vh;*/
   /*margin-top: 7.5vh;
   margin-left: 2vw;*/
@@ -22,8 +51,8 @@
   background-color: #222;
   color: #eee;
   overflow-y: auto;
-      -webkit-transition: width 1s, height 1s, top 1s, left 1s; /* For Safari 3.1 to 6.0 */
-    transition: width 1s, height 1s, top 1s, left 1s;
+  transition: width 1s, height 1s, top 1s, left 1s, bottom 1s;
+  -webkit-transition: width 1s, height 1s, top 1s, left 1s, bottom 1s; /* For Safari 3.1 to 6.0 */
 }
 
 .map-card__title {
@@ -50,34 +79,28 @@
   cursor: pointer;
 }
 
+.map-card__nav__icon {
+  display: inline-flex;
+  vertical-align: middle;
+}
+
 /*
 .map-card__nav_cover {
-  animation: glow 1s ease-in-out infinite alternate;
-  -moz-animation: glow 1s ease-in-out infinite alternate;
-  -webkit-animation: glow 1s ease-in-out infinite alternate;
-  color: #ececec;
+animation: glow 1s ease-in-out infinite alternate;
+-moz-animation: glow 1s ease-in-out infinite alternate;
+-webkit-animation: glow 1s ease-in-out infinite alternate;
+color: #ececec;
 }
 */
-  
+
 .map-card a {
   color: #ddd;
 }
- 
- @keyframes glow {
-   from { font-size: .9rem; }
-   to { font-size: .95rem; }
- }
 
- @-moz-keyframes glow {
-   from { font-size: .9rem; }
-   to { font-size: .95rem; }
- }
-
- @-webkit-keyframes glow {
-   from { font-size: .9rem; }
-   to { font-size: .95rem; }
- }
- 
+@keyframes map-marker {
+  from {font-size: 0px;}
+  to {font-size: 48px;}
+}
 
 .JCHS-map-marker {
   font-size: 48px;
@@ -85,6 +108,9 @@
   stroke: black;
   background-color: black;
   cursor: pointer;
+  animation-name: map-marker;
+  animation-duration: 0.7s;
+  animation-timing-function: cubic-bezier(.17,.89,.2,1.22);
 }
 
 .marker__bg_circle i { border-radius: 50%; }
@@ -106,129 +132,103 @@
   cursor: pointer;
 }
 
-#street-view {
-  height: 300px;
-  width: 300px;
-  margin: auto;
-  background-color: #222;
-  /*float: right;*/
-  /*clear: right;*/
+
+
+h1 {
+  font-size: 4rem;
+  line-height: 1.2em;
 }
 
-body {
-   margin: 0px;
-   padding: 0px;
-   font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-   background: #fff;
-   font-size: 1rem;
- }
- 
- a {
-   text-decoration: none;
- }
- 
- h1 {
-   font-size: 4em;
-   line-height: 1.2em;
- }
- 
- 
- p {
-   margin-bottom: .5rem;
- }
- 
- #map {
-   position: absolute;
-   top: 0;
-   bottom: 0;
-   width: 100%;
- }
- 
- #map {
-   position: fixed;
-   width: 105%;
-   overflow: hidden;
-   padding-right: 20px;
- }
 
- @media screen and (max-width: 1080px) {
-   #features {
-     width: 40%;
-     margin-left: .5rem;
-   }
- }
- 
- @media screen and (max-width: 620px) {
-   .map-card {
-     width: 50%;
-     margin-left: 0;
-     background-color:rgba(0, 0, 0, 0.6);
-   }
-   .map-card__body, .map-card__title {
-          padding: 5px;
-   }
- }
- 
- @media screen and (max-height: 350px) {
-   .map-card {
-     margin-top: 0;
-   }
- }
+p {
+  margin-bottom: .5rem;
+}
 
- @media screen and (max-width: 1500px) {
-   h1 {
-     font-size: 3.5rem;
-   }
- }
- 
- @media screen and (max-width: 1330px) {
-   h1 {
-     font-size: 3rem;
-   }
- }
- 
- @media screen and (max-width: 1200px) {
-   h1 {
-     font-size: 2.75rem;
-   }
- }
- 
- @media screen and (max-width: 680px) {
-   h1 {
-     font-size: 2rem;
-   }
- }
- 
- @media screen and (max-width: 790px) {
-   h1 {
-     font-size: 2rem;
-   }
- }
- 
- @media screen and (max-width: 640px) {
-   h1 {
-     font-size: 1.5rem;
-   }
-   h3 {
-     1.2rem;
-   }
-   body {
-     font-size: .8rem
-   }
-   section.active {
-     opacity: .6;
-   }
- }
- 
- @media screen and (max-width: 640px) {
-   h1 {
-     font-size: 1.2rem;
-   }
- }
- 
- @media screen and (max-width: 1200px) {
-   h3 {
-     font-size: 1.5rem;
-   }
- }
- 
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+#map {
+  position: fixed;
+  width: 105%;
+  overflow: hidden;
+  padding-right: 20px;
+}
+
+@media screen and (max-width: 1080px) {
+  #features {
+    width: 40%;
+    margin-left: .5rem;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .map-card {
+    width: 50%;
+    margin-left: 0;
+    background-color:rgba(0, 0, 0, 0.6);
+  }
+  .map-card__body, .map-card__title {
+    padding: 5px;
+  }
+}
+
+@media screen and (max-height: 350px) {
+  .map-card {
+    margin-top: 0;
+  }
+}
+
+
+@media screen and (max-width: 1500px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+}
+
+
+@media screen and (max-width: 1330px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  h1 {
+    font-size: 2.25rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+
+
+@media screen and (max-width: 840px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 790px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  h1 {
+    font-size: 1.2rem;
+  }
+  h3 {
+    1.2rem;
+  }
+  body {
+    font-size: .8rem
+  }
+  section.active {
+    opacity: .6;
+  }
+}
