@@ -1,4 +1,4 @@
-mapboxgl.accessToken = /* Mapbox access token */
+mapboxgl.accessToken = 'pk.eyJ1IjoiamNocy1tYXR0aGV3IiwiYSI6ImNqYXd4Z3lsYjBzNWMyd21rODEyb2VsNW4ifQ.reqWa5So56wgdT2aUar8dA'
 
 var map = new mapboxgl.Map({
   container: 'map',
@@ -123,23 +123,6 @@ var scenes = [
       }
     ]
   },
-  /*
-  {
-    card: {
-      title: 'Poor part',
-      body: '<p>Just a half a mile away, the blocks have many vacant lots and dilapidated structures.</p>'
-    },
-    map_view: {
-      bearing: 0,
-      center: [-83.146, 42.4164],
-      zoom: 19.5,
-      pitch: 75,
-      bearing: -180,
-      duration: 6000
-    },
-    markers: null
-  },
-  //*/
   {
     card: {
       title: 'Fitzgerald Neighborhood',
@@ -171,7 +154,7 @@ var scenes = [
     card: {
       title: 'From Abandonded to Amenity',
       body: `<p>In the middle of this disinvested area, the site of a new park reclaimed from empty and dilapidated lots.</p>`
-//<p>See before and after photos on the map:</p>`
+            //<p>See before and after photos on the map:</p>`
     },
     map_view: {
       center: [-83.144865, 42.4146],
@@ -239,7 +222,6 @@ var scenes = [
      },
     markers: [
       {
-        //"description": '<strong>The Detroit Sip</strong><p>A new local coffee shop serves as a potential gathering space to promote community.</p><img src="' + img_cafe + '">',
         "description": '<strong>The Detroit Sip</strong><p>A new local coffee shop serves as a potential gathering space to promote community.</p><img src="https://s3.amazonaws.com/jchs-app-source-data/IMG_4462.jpg">',
         "icon": "local_cafe",
         class: "marker__bg_square",
